@@ -5,8 +5,8 @@
 	var BUTTON2_ID = 'SRTPPU2';
 	var OTHER_ID = 'SRTPPUO';
 	var FORM_ID = 'SRTTPF';
-	var STYLE_ID = BUTTON_ID + '2';
-	var CONTAINER_ID = BUTTON_ID + '3';
+	var STYLE_ID = BUTTON2_ID + '2';
+	var CONTAINER_ID = BUTTON2_ID + '3';
 	var doc = document, create = doc.createElement.bind(doc), query = doc.querySelector.bind(doc);
 		cleanup();
 
@@ -74,8 +74,8 @@ style.id = STYLE_ID;
 	query('#'+BUTTON_ID).onclick = function(){
 		var value = query('input[name="name"]:checked').value;
 		value = value === 'Other' ? query('input#'+OTHER_ID).value : value;
-		cleanup();
 		window.open('http://smite.guru/realtime/s/'+value);
+		cleanup();
 	}
 	function cleanup() {
 		var style = query('#'+STYLE_ID);
@@ -87,11 +87,6 @@ style.id = STYLE_ID;
 		if (div !== null) {
 			doc.body.removeChild(div);
 		}
-		if (div !== null) {
-			console.log('found things, cleanup up');
-			return true;
-		}
-		return false;
 	}
 })();
 
